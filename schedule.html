@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+​
+
+ <div class="topnav">
+  <a  href="./home.php">Home</a>
+  <a href="./char_gen.html">Character Generator</a>
+  <a  href="./logout.php">Logout</a>
+  </div>
+
+<div class="center">
+<h2>Schedule a DND session!</h2>
+</div>
+
+<div class="footer">
+   <h3>&#169 Simply DND Rights Reserved</h3>
+</div>
+
+
+
+​
+
+<form class="center" action="schedule.php", method="POST">
+
+  <label for="sess_date">Enter date: </label>
+
+  <input class="main" type="date" id="sess_date" name="sess_date">
+  
+  <label for="sess_time">Enter time: </label>
+
+  <input class="main" type="time" id="sess_time" name="sess_time">
+
+  <label for="emails">Enter email addresses (seperate with commas):</label>
+
+  <input class="main" type="email" id="sess_email" name="sess_email">
+
+  <input class="main" type="submit">
+
+</form>
+
+</body>
+
+</html>
+
+<style>
+
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+  background-color: white;
+}
+body {
+  background-image: url("http://static.strefarpg.pl/old_gfx/nwn2/map_big.jpg");
+}
+.topnav {
+  overflow: hidden;
+  background-color: #000;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ff0000;
+  color: black;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+  padding-bottom: 35px;
+
+  }
+
+
+
+</style>
+
+
+
+
+
+
+

@@ -1,0 +1,365 @@
+<?php
+ 
+session_start();
+
+$char_info = $_SESSION["charinfo"];
+
+//echo $char_info;
+
+?>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=""scroll-down.js"></script>
+    <title>Character Sheet</title>
+    <h1>Character Sheet</h1>
+    <div class="footer">
+        <h3>&#169 Simply DND Rights Reserved</h3>
+     </div>
+    <div id="input">
+	<div id="Name">Your name: </div>
+	<div id="Character_Name">Character Name: </div>
+	<div id="Class">Class:</div>
+    <div id="Race">Race: </div>
+    <div id="Level">Level: </div>
+    <div id="Alignment">Alignment: </div>
+    </div>
+    <div id="box1">
+    <div id="STR">Strength: </div>
+    <div id="DEX">Dexterity: </div>
+    <div id="CON">Constitution: </div>
+    <div id="INT">Intelligence: </div>
+    <div id="WIS">Wisdom: </div>
+    <div id="CHA">Charisma: </div>
+    </div>
+    <div id="box2">
+    <div id="STR_MOD">Strength Modifier: </div>
+    <div id="DEX_MOD">Dexterity Modifier: </div>
+    <div id="CON_MOD">Constitution Modifier: </div>
+    <div id="INT_MOD">Intelligence Modifier: </div>
+    <div id="WIS_MOD">Wisdom Modifier: </div>
+    <div id="CHA_MOD">Charisma Modifier: </div>
+    </div>
+    <div id="box3">
+    <div id="HP">Max Health: </div>
+    <div id="Hit_Dice">Hit Dice: </div>
+    <div id="AC">Armor Class: </div>
+    </div>
+    <div id="box4">
+    <div id="Size_desc">Your size: </div>
+	<div id="Lang_desc">Langauges you know: </div>
+    <div id="Traits">Traits: </div>
+  </div>
+    <script>
+
+	    var dict = <?php echo $char_info?>; 
+	console.log(dict);	
+		//Get dictionary info into page.
+        for (var key in dict){
+        	if (key == "Traits"){
+            	var things = Object.values(dict[key]);
+				for (var k in things){
+					thing = Object.values(things[k]);
+					document.getElementById(key).innerHTML += thing[1] + ", ";
+				}
+            }
+			else{
+				document.getElementById(key).innerHTML += dict[key];
+			}
+            
+        };
+</script>
+</head>
+<body>
+    
+
+<p id="demo"></p> 
+
+
+    
+    </body>
+</html> 
+
+<style media="screen">
+	 *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FFFFFF;
+}
+h1 {
+    color: black;
+    text-align: center;
+    margin-top:5px;
+    
+  }
+.footer {
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5%;
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  font-family: 'Trebuchet MS', sans-serif;
+    padding-bottom: 35px;
+
+  }
+  #input{
+    background-color: rgb(233, 200, 200);
+  width: 900px;
+  height: 80px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: auto;
+  margin-top:10px;
+  font-weight: bold;
+}
+  
+  #Name{
+    width:200px;
+    padding:-10px;
+    float:left;
+    
+  }
+  #Character_Name{
+    width:200px;
+    padding:-10px;
+    float:left;
+    
+  }
+  #Class{
+    width:200px;
+    padding:-10px;
+    float:right;
+  }
+  #Race{
+    width:200px;
+    padding:-30px;
+    float:left;
+  }
+  #Level{
+    width:200px;
+    padding:-30px;
+    float:left;
+  }
+  #Alignment{
+    width:200px;
+    padding:-30px;
+    float:right;
+  }
+  #box1{
+    background-color: white;
+  width: 150px;
+  height: 400px;
+  border: 5px solid white;
+  float:left;
+  margin: 1px;
+  
+  margin-top:20px;
+  margin-right:20px;
+}
+  #STR{
+    background-color: rgb(233, 200, 200);
+  width: 145px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #DEX{
+    background-color: rgb(233, 200, 200);
+  width: 145px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #CON{
+    background-color: rgb(233, 200, 200);
+  width: 145px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #INT{
+    background-color: rgb(233, 200, 200);
+  width: 145px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #WIS{
+    background-color: rgb(233, 200, 200);
+  width: 145px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #CHA{
+    background-color: rgb(233, 200, 200);
+  width: 145px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #box2{
+    background-color: white;
+  width: 250px;
+  height: 400px;
+  border: 5px solid white;
+  
+  float:left;
+  margin-left:75px;
+  margin-top:20px;
+  padding:1px;
+
+  }
+  #STR_MOD{
+    background-color: rgb(233, 200, 200);
+  width: 230px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #DEX_MOD{
+    background-color: rgb(233, 200, 200);
+  width: 230px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #CON_MOD{
+    background-color: rgb(233, 200, 200);
+  width: 230px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #INT_MOD{
+    background-color: rgb(233, 200, 200);
+  width: 230px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #WIS_MOD{
+    background-color: rgb(233, 200, 200);
+  width: 230px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #CHA_MOD{
+    background-color: rgb(233, 200, 200);
+  width: 230px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #box3{
+    background-color: white;
+  width: 160px;
+  height: 200px;
+  border: 5px solid white;
+  float:left;
+  margin: 1px;
+  margin-left:75px;
+  
+  margin-top:20px;
+  }
+  #HP{
+  background-color: rgb(233, 200, 200);
+  width: 150px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #Hit_Dice{
+    background-color: rgb(233, 200, 200);
+  width: 150px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #AC{
+    background-color: rgb(233, 200, 200);
+  width: 150px;
+  height: 60px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  }
+  #box4{
+    background-color: white;
+  width: 440px;
+  height: 475px;
+  border: 5px solid white;
+  float:right;
+  margin: 1px;
+  margin-left:75px;
+  
+  margin-top:20px;
+  }
+  #Size_desc{
+    background-color: rgb(233, 200, 200);
+  width: 430px;
+  height: 125px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #Lang_desc{
+    background-color: rgb(233, 200, 200);
+  width: 430px;
+  height: 150px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+  #Traits{
+    background-color: rgb(233, 200, 200);
+  width: 430px;
+  height: 125px;
+  border: 5px solid black;
+  padding: 15px;
+  margin: 1px;
+  
+  }
+
+
+  
+
+</style>
+
